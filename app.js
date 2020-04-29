@@ -10,6 +10,7 @@ require("./src/db/index")
 //routes
 const UserRoute=require("./src/routes/user.route")
 const ProductRoute=require("./src/routes/product.route")
+const BookRoute=require("./src/routes/book.route")
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
@@ -19,6 +20,7 @@ app.use(cookieParser());
 
 app.use("/user",UserRoute)
 app.use("/product",ProductRoute)
+app.use("/book",BookRoute)
 
 app.get("/",(req,res,next)=>{
     res.status(200).send({
